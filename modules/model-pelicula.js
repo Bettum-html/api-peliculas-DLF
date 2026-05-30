@@ -12,10 +12,15 @@ const Pelicula = sequelize.define('Pelicula', {
     allowNull: false
   },
   director: {
-    type: DataTypes.STRING
+    type: DataTypes.STRING,
   },
   anio: {
-    type: DataTypes.INTEGER
+    type: DataTypes.INTEGER,
+  },
+  demanda: {
+    type: DataTypes.STRING,
+    primaryKey: true,
+    autoIncrement: true
   }
 }, {
   tableName: 'peliculas',
