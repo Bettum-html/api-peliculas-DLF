@@ -19,7 +19,6 @@ const Pelicula = sequelize.define('Pelicula', {
   },
   demanda: {
     type: DataTypes.STRING,
-    primaryKey: true,
   }
 }, {
   tableName: 'peliculas',
