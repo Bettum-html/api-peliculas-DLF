@@ -1,6 +1,7 @@
-const express = require('express');
+import express from 'express';
+import service from '../services/serv-pelicula.js';
+
 const router = express.Router();
-const service = require('../services/serv-pelicula');
 
 // GET todas
 router.get('/', async (req, res) => {
@@ -35,4 +36,4 @@ router.delete('/:id', async (req, res) => {
   res.json(data);
 });
 
-module.exports = router;
+export default router;
