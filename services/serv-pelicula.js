@@ -2,6 +2,8 @@ const Pelicula = require('../modules/model-pelicula');
 
 class PeliculaService {
 
+//- - - CRUD PELICULAS - - -  
+  
   async getAll() {
     return await Pelicula.findAll();
   }
