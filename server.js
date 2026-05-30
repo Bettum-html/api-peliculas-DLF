@@ -1,6 +1,6 @@
-const express = require('express');
-const { sequelize } = require('./modules/db');
-const peliculasRouter = require('./routes/ruta-pelicula');
+import express from 'express';
+import { sequelize } from './modules/db.js';
+import peliculasRouter from './routes/ruta-pelicula.js';
 
 const app = express();
 app.use(express.json());
