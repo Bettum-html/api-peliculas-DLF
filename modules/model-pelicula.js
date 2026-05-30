@@ -16,9 +16,6 @@ const Pelicula = sequelize.define('Pelicula', {
   },
   anio: {
     type: DataTypes.INTEGER,
-  },
-  demanda: {
-    type: DataTypes.STRING,
   }
 }, {
   tableName: 'peliculas',
