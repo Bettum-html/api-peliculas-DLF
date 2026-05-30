@@ -23,7 +23,7 @@ res.send('API funcionando ...');
 });
 
 app.use('/peliculas', peliculasRouter);
-app.listen(process.env.PORT | 3001, () => console.log('API lista en http://localhost:3000'));
+app.listen(process.env.PORT || 3001, () => console.log('API lista en http://localhost:3000'));
 
 
 iniciarServidor();
