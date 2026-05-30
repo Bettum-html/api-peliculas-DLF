@@ -5,6 +5,15 @@ const peliculasRouter = require('./routes/ruta-pelicula');
 const app = express();
 app.use(express.json());
 
+// Inicialización asíncrona de la base de datos
+try {
+await sequelize.authenticate();
+console.log('Conexión con PostgreSQL establecida correctamente.');
+await sequelize.sync(); // Crea la tabla en la nube si no existe
+} catch (error) {
+console.error('Error al inicializar la base de datos:', error);
+}
+
 app.use((req, res, next) => {
   console.log(`${req.method} ${req.url}`);
   next();
