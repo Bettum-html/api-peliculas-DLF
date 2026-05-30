@@ -1,9 +1,9 @@
-const Pelicula = require('../modules/model-pelicula');
+import Pelicula from '../modules/model-pelicula.js';
+
+//- - - CRUD - - - 
 
 class PeliculaService {
 
-//- - - CRUD PELICULAS - - -  
-  
   async getAll() {
     return await Pelicula.findAll();
   }
@@ -30,4 +30,4 @@ class PeliculaService {
   }
 }
 
-module.exports = new PeliculaService();
+export default new PeliculaService();
