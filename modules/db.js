@@ -1,4 +1,4 @@
-const { Sequelize } = require('sequelize');
+import { Sequelize } from 'sequelize';
 
 const sequelize = new Sequelize(process.env.DATABASE_URL, {
   dialect: 'postgres',
@@ -6,10 +6,10 @@ const sequelize = new Sequelize(process.env.DATABASE_URL, {
   dialectOptions: {
     ssl: {
       require: true,
-      rejectUnauthorized: false // Crucial para que Render acepte la conexión segura
+      rejectUnauthorized: false
     }
   },
-  logging: false // Cambia a console.log si quieres ver las consultas SQL en la terminal
+  logging: false
 });
 
-module.exports = { sequelize };
+export { sequelize };
