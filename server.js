@@ -31,8 +31,4 @@ app.use((req, res, next) => {
 
 app.use('/peliculas', peliculasRouter);
 
-sequelize.sync().then(() => {
-  app.listen(3000, () => {
-    console.log('Servidor en http://localhost:3000');
-  });
-});
+app.listen(process.env.PORT | 3001, () => console.log('API lista en http://localhost:3000'));
