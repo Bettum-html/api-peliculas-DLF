@@ -5,25 +5,27 @@ import peliculasRouter from './routes/ruta-pelicula.js';
 const app = express();
 
 app.use(express.json());
-// Inicialización asíncrona de la base de datos
+
+app.get('/', (req, res) => {
+  res.send('API funcionando...');
+});
+
+app.use('/peliculas', peliculasRouter);
+
 async function iniciarServidor() {
   try {
     await sequelize.authenticate();
-    console.log('Conexión con PostgreSQL establecida correctamente.');
-    await sequelize.sync();// Crea la tabla en la nube si no existe
+    console.log('Conexión con PostgreSQL establecida');
+
+    await sequelize.sync();
+
     app.listen(process.env.PORT || 3001, () => {
-      console.log(`Servidor iniciado`);
+      console.log('API lista en http://localhost:3000');
     });
+
   } catch (error) {
     console.error(error);
   }
 }
-app.get('/', async (req, res) => {
-res.send('API funcionando ...');
-});
-
-app.use('/peliculas', peliculasRouter);
-app.listen(process.env.PORT || 3001, () => console.log('API lista en http://localhost:3000'));
-
 
 iniciarServidor();
